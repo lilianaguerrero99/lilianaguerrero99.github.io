@@ -24,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634156884184</updated>
-      <workItem from="1634156885705" duration="5354000" />
+      <workItem from="1634156885705" duration="10344000" />
     </task>
     <servers />
   </component>
@@ -86,6 +87,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="298" y="151" key="run.anything.popup" timestamp="1634170333931">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1634170333931" />
     <state x="303" y="1" key="search.everywhere.popup" timestamp="1634157922996">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
