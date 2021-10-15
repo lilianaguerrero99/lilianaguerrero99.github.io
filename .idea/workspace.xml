@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="50f64f9d-8d0b-4ce9-a937-ae3d74856508" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cooking_website" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -66,7 +65,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634156884184</updated>
-      <workItem from="1634156885705" duration="10974000" />
+      <workItem from="1634156885705" duration="11102000" />
+      <workItem from="1634252970765" duration="2080000" />
+      <workItem from="1634267279135" duration="66000" />
     </task>
     <servers />
   </component>
@@ -83,8 +84,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="422" y="96" key="FileChooserDialogImpl" timestamp="1634267342584">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="422" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1634267342584" />
     <state x="298" y="151" key="run.anything.popup" timestamp="1634170333931">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
