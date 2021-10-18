@@ -48,7 +48,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cooking_website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -68,6 +68,7 @@
       <workItem from="1634156885705" duration="11102000" />
       <workItem from="1634252970765" duration="2080000" />
       <workItem from="1634267279135" duration="66000" />
+      <workItem from="1634599309838" duration="57000" />
     </task>
     <servers />
   </component>
