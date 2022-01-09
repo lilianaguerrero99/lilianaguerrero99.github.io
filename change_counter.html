@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Counter</title>
+</head>
+<body>
+<div>
+<form name="information">
+    <p>Please enter how many pennies you have: <input name="p" type="number"></p>
+    <p>Please enter how many nickles you have: <input name="n" type="number"></p>
+    <p>Please enter how many dimes you have: <input name="d" type="number"></p>
+    <p>Please enter how many quarters you have: <input name="q" type="number"></p>
+    <button onclick="calculate(this.form)">Calculate</button>
+</form>
+</div>
+<div>
+    <h1>Your totals are</h1>
+    <h3 id="p_amount"></h3> <p id="penny"></p>
+    <h3 id="n_amount"></h3> <p id="nickle"></p>
+    <h3 id="d_amount"></h3> <p id="dime"></p>
+    <h3 id="q_amount"></h3> <p id="quarter"></p>
+    <h3 id="total"></h3>
+    <button onclick="reset()">Reset</button>
+
+    <h3>Sleeve breakdown</h3>
+    <p>50 pennies per sleeve</p>
+    <p>40 nickles per sleeve</p>
+    <p>50 dimes per sleeve</p>
+    <p>40 quarters per sleeve</p>
+</div>
+
+</body>
+<script>
+    var PENNY_SLEEVE = 50;
+    var NICKLE_SLEEVE = 40;
+    var DIME_SLEEVE = 50;
+    var QUARTER_SLEEVE = 40;
+
+    function calculate(form) {
+        var penny = change(form.p.value, 100, 0.01, "p", "penny");
+        var nickle = change(form.n.value, 20, 0.05, "n", "nickle");
+        var dime = change(form.d.value, 10, 0.1, "d", "dime");
+        var quarter = change(form.q.value, 4, 0.25, "q", "quarter");
+        var t = total(penny, nickle, dime, quarter);
+
+        var p_sleeve = sleeve(localStorage.getItem("p"), 0.01, PENNY_SLEEVE, "p_sleeve", "p_amount");
+        var n_sleeve = sleeve(localStorage.getItem("n"), 0.05, NICKLE_SLEEVE, "n_sleeve", "n_amount");
+        var d_sleeve = sleeve(localStorage.getItem("d"), 0.1, DIME_SLEEVE, "d_sleeve", "d_amount");
+        var q_sleeve = sleeve(localStorage.getItem("q"), 0.25, QUARTER_SLEEVE, "q_sleeve", "q_amount");
+    }
+    function change(c, maxValue, multiplier, key, current){
+        var count = 0;
+        while (c != 0) {
+            if (c >= maxValue) {
+                count++;
+                c = c - maxValue;
+            }else{
+                var temp = c * multiplier;
+                count = count + temp;
+                c = c - c;
+            }
+        }
+        localStorage.setItem(current, count.toFixed(2));
+        if(localStorage.getItem(key) == null) {
+            localStorage.setItem(key, count.toFixed(2));
+            return count
+        }else{
+            var storage = localStorage.getItem(key) * 1;
+            localStorage.setItem(key, (storage + count).toFixed(2));
+            return (storage + count);
+        }
+    }
+    function total(p, n, d, q){
+        var count = (p+n+d+q);
+        localStorage.setItem("t", count.toFixed(2));
+        return count;
+    }
+    function sleeve(c, multiplier, sleeve_amount, key, sleeve_key){
+        var count = 0;
+        c = c / multiplier;
+        localStorage.setItem(sleeve_key, c.toFixed(0));
+        while(c != 0){
+            if(c >= sleeve_amount){
+               count++;
+                c = c - sleeve_amount;
+            }else{
+                break;
+            }
+        }
+        localStorage.setItem(key, count);
+        return count;
+    }
+    function reset() {
+        localStorage.setItem("penny", 0);
+        localStorage.setItem("p", 0);
+        localStorage.setItem("p_sleeve", 0);
+        localStorage.setItem("p_amount", 0);
+
+        localStorage.setItem("nickle", 0);
+        localStorage.setItem("n", 0);
+        localStorage.setItem("n_sleeve", 0);
+        localStorage.setItem("n_amount", 0);
+
+        localStorage.setItem("dime", 0);
+        localStorage.setItem("d", 0);
+        localStorage.setItem("d_sleeve", 0);
+        localStorage.setItem("d_amount", 0);
+
+        localStorage.setItem("quarter", 0);
+        localStorage.setItem("q", 0);
+        localStorage.setItem("q_sleeve", 0);
+        localStorage.setItem("q_amount", 0);
+
+        localStorage.setItem("t", 0);
+        location.reload();
+    }
+
+    document.getElementById("p_amount").textContent = "Pennies: " + localStorage.getItem("p_amount");
+    document.getElementById("n_amount").textContent = "Nickles: " + localStorage.getItem("n_amount");
+    document.getElementById("d_amount").textContent = "Dimes: " + localStorage.getItem("d_amount");
+    document.getElementById("q_amount").textContent = "Quarters: " + localStorage.getItem("q_amount");
+
+    document.getElementById("penny").textContent = "You entered: $" + localStorage.getItem("penny") + ". You now have $" + localStorage.getItem("p") + " in pennies. You will need " + localStorage.getItem("p_sleeve") + " penny sleeves.";
+    document.getElementById("nickle").textContent = "You entered: $" + localStorage.getItem("nickle") + ". You now have $" + localStorage.getItem("n") + " in nickles. You will need " + localStorage.getItem("n_sleeve") + " nickle sleeves.";
+    document.getElementById("dime").textContent = "You entered: $" + localStorage.getItem("dime") + ". You now have $" + localStorage.getItem("d") + " in dimes. You will need " + localStorage.getItem("d_sleeve") + " dime sleeves.";
+    document.getElementById("quarter").textContent = "You entered: $" + localStorage.getItem("quarter") + ". You now have $" + localStorage.getItem("q") + " in quarters. You will need " + localStorage.getItem("q_sleeve") + " quarter sleeves.";
+    document.getElementById("total").textContent = "Total: $" + localStorage.getItem("t");
+
+</script>
+</html>
